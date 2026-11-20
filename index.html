@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Ekaterina Trifonova — Frontend Developer. React, TypeScript, BI visualization, mobile interfaces, and multilingual products."
+    />
+    <title>Ekaterina Trifonova — Frontend Developer</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #21313b;
+        --muted: #52646e;
+        --accent: #176d73;
+        --line: #cddadd;
+        --paper: #fff;
+        --canvas: #e9eff0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 15px;
+      }
+
+      body {
+        margin: 0;
+        background: var(--canvas);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.42;
+      }
+
+      .screen-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 16px;
+        width: min(100% - 32px, 850px);
+        margin: 18px auto 0;
+        font-size: 0.9rem;
+      }
+
+      .screen-actions button {
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: var(--accent);
+        cursor: pointer;
+        font: inherit;
+        text-decoration: underline;
+      }
+
+      .resume {
+        width: min(100% - 32px, 850px);
+        margin: 12px auto 38px;
+        padding: 50px 56px 54px;
+        background: var(--paper);
+        box-shadow: 0 12px 36px rgb(19 45 54 / 12%);
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+      }
+
+      .identity {
+        border-bottom: 2px solid var(--accent);
+        padding-bottom: 16px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 2px;
+        font-size: 2.18rem;
+        font-weight: 700;
+        letter-spacing: -0.035em;
+        line-height: 1.08;
+      }
+
+      .role-title {
+        margin-bottom: 11px;
+        color: var(--accent);
+        font-size: 1.12rem;
+        font-weight: 700;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 14px;
+        color: var(--muted);
+        font-size: 0.91rem;
+      }
+
+      section {
+        margin-top: 20px;
+      }
+
+      h2 {
+        margin-bottom: 8px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid var(--line);
+        color: var(--accent);
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.085em;
+        text-transform: uppercase;
+      }
+
+      h3 {
+        margin-bottom: 1px;
+        font-size: 1.05rem;
+        line-height: 1.25;
+      }
+
+      p {
+        margin-bottom: 7px;
+      }
+
+      .summary {
+        margin-bottom: 0;
+      }
+
+      .skill-row {
+        margin: 0 0 4px;
+      }
+
+      .skill-row strong {
+        color: var(--ink);
+      }
+
+      .entry {
+        margin-bottom: 16px;
+      }
+
+      .entry:last-child {
+        margin-bottom: 0;
+      }
+
+      .entry-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+
+      .dates {
+        flex: 0 0 auto;
+        color: var(--muted);
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+
+      .subline {
+        color: var(--muted);
+        font-size: 0.91rem;
+      }
+
+      ul {
+        margin: 7px 0 0;
+        padding-left: 20px;
+      }
+
+      li {
+        margin: 0 0 6px;
+        padding-left: 1px;
+      }
+
+      li::marker {
+        color: var(--accent);
+      }
+
+      .compact-list li {
+        margin-bottom: 4px;
+      }
+
+      .education-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 26px;
+      }
+
+      .education-grid p {
+        margin-bottom: 0;
+      }
+
+      .minor {
+        color: var(--muted);
+        font-size: 0.91rem;
+      }
+
+      .languages-line {
+        margin: 11px 0 0;
+      }
+
+      @media (max-width: 650px) {
+        .resume {
+          padding: 30px 24px 36px;
+        }
+
+        .entry-heading {
+          display: block;
+        }
+
+        .education-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .dates {
+          display: block;
+          margin-top: 2px;
+        }
+      }
+
+      @page {
+        size: A4;
+        margin: 10mm 12mm;
+      }
+
+      @media print {
+        html {
+          font-size: 10.5pt;
+        }
+
+        body {
+          background: #fff;
+          line-height: 1.31;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .screen-actions {
+          display: none;
+        }
+
+        .resume {
+          width: auto;
+          max-width: none;
+          margin: 0;
+          padding: 0;
+          box-shadow: none;
+        }
+
+        .identity {
+          padding-bottom: 8px;
+        }
+
+        h1 {
+          font-size: 23pt;
+        }
+
+        section {
+          margin-top: 10px;
+        }
+
+        h2 {
+          break-after: avoid;
+        }
+
+        li {
+          margin-bottom: 3px;
+        }
+
+        .education-grid {
+          gap: 8px 20px;
+        }
+
+        .languages-line {
+          margin-top: 7px;
+        }
+
+        .entry-heading,
+        .education-grid > div,
+        li {
+          break-inside: avoid;
+        }
+
+        a {
+          text-decoration: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="screen-actions">
+      <a href="Ekaterina_Trifonova_Frontend_Developer_CV.pdf">Download PDF</a>
+      <button type="button" onclick="window.print()">Print</button>
+    </div>
+
+    <main class="resume">
+      <header class="identity">
+        <h1>Ekaterina Trifonova</h1>
+        <p class="role-title">Frontend Developer</p>
+        <div class="contact" aria-label="Contact details">
+          <span>Serbia</span>
+          <a href="mailto:3420922@gmail.com">3420922@gmail.com</a>
+          <a href="https://www.linkedin.com/in/ekatrif/">LinkedIn</a>
+          <a href="https://github.com/ekatrif">GitHub</a>
+        </div>
+      </header>
+
+      <section aria-labelledby="profile-heading">
+        <h2 id="profile-heading">Profile</h2>
+        <p class="summary">
+          Frontend developer with commercial experience since 2021, including
+          three years on an enterprise BI platform based on Apache Superset.
+          Focused on React, TypeScript, data-intensive interfaces, mobile UX, and
+          multilingual products. Primarily a frontend developer with occasional
+          Python/Flask backend and API contributions.
+        </p>
+      </section>
+
+      <section aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Technical skills</h2>
+        <p class="skill-row">
+          <strong>Frontend:</strong> React, TypeScript, JavaScript, Redux, HTML,
+          CSS/SCSS, Ant Design, Vue.js/Vuex
+        </p>
+        <p class="skill-row">
+          <strong>Data visualization:</strong> Apache ECharts, D3.js, AG Grid,
+          Deck.gl, chart plugins and interactive tables
+        </p>
+        <p class="skill-row">
+          <strong>Testing & tooling:</strong> Jest, React Testing Library,
+          Playwright, Git, Webpack, Vite, ESLint, Figma
+        </p>
+        <p class="skill-row">
+          <strong>AI-assisted development:</strong> code research, debugging,
+          review, and test design
+        </p>
+        <p class="skill-row">
+          <strong>Basic knowledge:</strong> Python, Flask, Rust, WebAssembly
+        </p>
+      </section>
+
+      <section aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Professional experience</h2>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Developer (Frontend) · IntelPro</h3>
+            <span class="dates">Oct 2023 – Nov 2026</span>
+          </div>
+          <p class="subline">
+            Report!Me — enterprise BI platform built on a customized Apache
+            Superset fork
+          </p>
+          <ul>
+            <li>
+              Extended React/TypeScript visualization controls across ECharts:
+              metric-level styling, conditional formatting, axes, legends,
+              tooltips, and time-series comparisons.
+            </li>
+            <li>
+              Built the Event Milestones visualization and an AG Grid-based table
+              plugin; improved data-heavy tables with caching, lazy row loading,
+              and virtualization.
+            </li>
+            <li>
+              Implemented dashboard undo/redo and safe version preview and
+              restoration. Built an API-backed chart-template library with
+              previews and selective property application.
+            </li>
+            <li>
+              Created a multi-step PPTX export wizard and extended bulk PDF/PPTX
+              export with server integration, permissions, progress, and error
+              handling.
+            </li>
+            <li>
+              Implemented the platform’s mobile interface across SQL Lab, Explore,
+              dashboards, entity lists, filters, and dialogs; unified mobile modal
+              behavior and supported feature-flagged workflows.
+            </li>
+            <li>
+              Implemented multilingual support across frontend and Python
+              backend: locale selection, translated UI and error messages, and
+              locale-aware dates and numbers in charts, tables, pagination, and
+              reports.
+            </li>
+            <li>
+              Added folder-based bulk actions and permission-aware controls;
+              contributed targeted Python/Flask API changes and automated tests
+              for key editing workflows.
+            </li>
+          </ul>
+        </article>
+        <article class="entry">
+          <div class="entry-heading">
+            <h3>Freelance Frontend Developer</h3>
+            <span class="dates">2021 – 2023</span>
+          </div>
+          <p>
+            Developed commercial websites for clients. Project details are
+            confidential.
+          </p>
+        </article>
+      </section>
+
+      <section aria-labelledby="education-heading">
+        <h2 id="education-heading">Education & training</h2>
+        <div class="education-grid">
+          <div>
+            <h3>Bauman Moscow State Technical University</h3>
+            <p>Specialist degree in Engineering, diploma with honors</p>
+            <p class="minor">2001 – 2007</p>
+          </div>
+          <div>
+            <h3>Rolling Scopes School</h3>
+            <p>JavaScript / Frontend 2023Q1: TypeScript, React</p>
+            <p>JS/FE Pre-School 2022Q4</p>
+            <p class="minor">2022 – 2023</p>
+          </div>
+          <div>
+            <h3>Educational Center “Professional”</h3>
+            <p>Frontend Development, diploma with honors</p>
+            <p class="minor">2021</p>
+          </div>
+          <div>
+            <h3>Certificates</h3>
+            <p>
+              <strong>Computer Science for Frontend</strong><br />
+              <span class="minor">Kobets Andrey · Sep 2026</span>
+            </p>
+            <p>
+              <a href="https://app.rs.school/certificate/8gnkockf">RS School JavaScript/Frontend 2023Q1</a>
+            </p>
+            <p>
+              <a href="https://www.efset.org/cert/q5Nzny">EF SET English — B2 (59/100)</a>
+            </p>
+          </div>
+        </div>
+        <p class="languages-line">
+          <strong>Languages:</strong> Russian — native · English — B2 · French —
+          B2 · Serbian — A1
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
